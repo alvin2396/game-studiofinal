@@ -28,6 +28,11 @@ var jsFilesToInject = [
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
 
+  // JQuery JS
+  'vendor/jquery/dist/jquery.min.js',
+  // Bootstrap JS
+  'vendor/bootstrap/dist/js/bootstrap.min.js',
+  
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
 
