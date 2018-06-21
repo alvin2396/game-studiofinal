@@ -1,74 +1,482 @@
-<!-- Default home page -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600' rel='stylesheet' type='text/css'>
-<style>
-  /* Styles included inline since you'll probably be deleting this page anyway */
-  html,body{text-align:left;font-size:1em}html,body,img,form,textarea,input,fieldset,div,p,div,ul,li,ol,dl,dt,dd,h1,h2,h3,h4,h5,h6,pre,code{margin:0;padding:0}ul,li{list-style:none}img{display:block}a img{border:0}a{text-decoration:none;font-weight:normal;font-family:inherit}*:active,*:focus{outline:0;-moz-outline-style:none}h1,h2,h3,h4,h5,h6{font-weight:normal}div.clear{clear:both}.clearfix:after{clear:both;content:".";display:block;font-size:0;height:0;line-height:0;visibility:hidden}body{font-family:"Open Sans",Arial,sans-serif;font-weight:300;}.top-bar {width: 100%; background-color: #e4f0f1; padding: 15px 0;}.top-bar .container img {float: left;}.top-bar .container ul {float: right; padding-top: 25px;}.top-bar .container li {float: left; width: 125px; text-align: center; font-size: 15px; color:#000; font-weight: 600;}.top-bar .container a li:hover {color: #118798; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}.container{width: 80%; max-width: 1200px; margin: auto;}div.header {-webkit-transition: 6s; -moz-transition: 6s; -o-transition: 6s;transition: 6s; background: rgba(4, 36, 41, 0.89) url(http://sailsjs.org/images/img_sailsShadow.png) no-repeat 42% bottom; padding: 100px 0 65px;}.header h1#main-title{color: #fff; font-weight: 300; font-size: 2.5em;}.header h3{color: #b1eef7; font-style: italic; font-weight: 300;}.header h3 code{font-style: normal!important; background-color: rgba(255,255,255,0.5); font-weight: 300; color:#0e6471; margin: 0px 5px;}div.main.container{padding: 50px 0;}h1 {color: #118798; font-weight: 300;}code {font-size: inherit; font-family: 'Consolas', 'Monaco', monospace; padding:4px 5px 1px; background-color: #f3f5f7}a{color: #118798; font-weight: 300; text-decoration: underline;}a:hover {color: #0e6471; -webkit-transition:color 200ms; -moz-transition:color 200ms; -o-transition:color 200ms;transition:color 200ms;}p{line-height: 1.5em;}blockquote{background-color: #e4f0f1; padding: 25px; line-height: 1.5em; margin: 15px 0;}blockquote span{font-weight: 600; padding-right: 5px;}ul.getting-started{padding: 25px 75px 25px 0; width: 70%; float: left; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}ul.getting-started li{padding: 25px 0;}ul.getting-started li h3 {padding-bottom: 10px; font-size: 25px; font-weight: 300;}.sprite{background:url(http://sailsjs.org/images/newapp.sprite.png) no-repeat; position: absolute; left: 0; top:0;}.getting-started .sprite{margin-left:10px;padding-left:60px;height:42px;width:0; float: left;}.getting-started .one{background-position:0 0}.getting-started .two{background-position:0 -42px}.getting-started .three{background-position:0 -83px}div.step {position: relative; padding-left: 70px; opacity: 0.9;}div.step:hover{ opacity: 1;}div.links {float: left; width: 30%; max-width: 325px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; background-color: #f3f5f7; border: 1px solid #ebebeb; padding: 25px 45px 35px;}div.links h3 {color: #727272; text-align: center; font-size: 28px; font-weight: 300;}div.links h4 {color: #727272; font-size: 17px; font-weight: 600; padding: 15px 0 10px;}div.links .link-list a {text-decoration: none; font-weight: 400;}div.links .link-list a li {padding: 0px 0px 5px 10px;}div.default-page{min-width: 1200px;}.pocket{display:none;}
-</style>
-<script type="text/javascript">
-setTimeout(function sunrise () {
-  document.getElementsByClassName('header')[0].style.backgroundColor = '#118798';
-}, 0);
-</script>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="default-page">
-  <div class="header">
-    <h1 id="main-title" class="container"><%= __('A brand new app.') %></h1>
-    <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
-  </div>
-  <div class="main container clearfix">
-    <!-- <h1>Getting started</h1>
-    <p>Don't worry, we've got your back.</p> -->
-    <ul class="getting-started">
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite one"></div>
-          <h3>Generate a REST API.</h3>
-          <p>
-            Run <code>sails generate api user</code>.  This will create two files: a <a href="http://sailsjs.org/#!/documentation/concepts/ORM/Models.html">model</a> <code class="pocket">api/models/User.js</code> and a <a href="http://sailsjs.org/#!/documentation/concepts/Controllers">controller</a><code class="pocket">api/controllers/UserController.js</code>.
-          </p>
+<head>
+
+  <meta charset="utf-9">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Home</title>
+
+  <link href="styles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles/bootstrap/custom css home.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body id="page-top">
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container-fluid">
+        <a class="navbar-brand js-scroll-trigger" href="Home.html">Logo</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Home.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Genre.html">Genre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="New Game.html">New Game</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="On Sale Now.html">On Sale Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="My Specification.html">My Specification</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a data-toggle="modal" href="#myModal">
+              <i class="fa fa-shopping-cart" style="font-size:26px"></i>
+            </a>
+            </li>
+            <li class="nav-item">
+                <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+              </form>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Login.html">Login</a>
+            </li>
+          </ul>
         </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite two"></div>
-          <h3>
-            Lift your app.
-          </h3>
-          <p>
-            Run <code>sails lift</code> to start up your app server.  If you visit <a target="_blank" href="http://localhost:<%= sails.config.port || 1337%>/user"><code>http://localhost:<%= sails.config.port || 1337%>/user</code></a> in your browser, you'll see a <a href="http://sailsjs.org/#!/documentation/reference/blueprint-api">WebSocket-compatible</a> user API.
-          </p>
+      </div>
+    </nav>
+
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h5 class="modal-title"><b>YOUR SHOPPING CART</b></h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-      </li>
-      <li class="clearfix">
-        <div class="step">
-          <div class="sprite three"></div>
-          <h3>
-            Dive in.
-          </h3>
-          <p>Blueprints are just the beginning.  You'll probably also want to learn how to customize your app's <a href="http://sailsjs.org/#!/documentation/concepts/Routes">routes</a>, set up <a href="http://sailsjs.org/#!/documentation/concepts/Policies">security policies</a>, configure your <a href="http://sailsjs.org/#!/documentation/reference/sails.config/sails.config.connections.html">data sources</a>, and build custom <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/Controllers?q=actions">controller actions</a>. For more help getting started, check out the links on this page.</p>
-
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="col-sm-3">
+            <img src="images/1.jpg" alt="IMG" style="width: 100%;">
+          </div>
+            <div class="col-sm-6">
+              <p>Game A</p>
+            </div>
+            <div class="col-sm-3 text-right">
+              <p>$50</p>
+            </div>
         </div>
-      </li>
-    </ul>
-    <div class="links">
-      <!-- <h3>Links</h3> -->
-      <ul class="link-list">
-
-        <h4>Docs</h4>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/anatomy/myApp"><li>App Structure</li></a>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/reference"><li>Reference</li></a>
-        <a target="_blank" href="http://sailsjs.org/#!/documentation/concepts/extending-sails/Adapters/adapterList.html"><li>Supported Databases</li></a>
-
-        <h4>Tutorials</h4>
-        <a target="_blank" href="https://github.com/sails101"><li>Sails 101</li></a>
-
-        <h4>Community</h4>
-        <a target="_blank" href="http://stackoverflow.com/search?q=sails.js"><li>StackOverFlow</li></a>
-        <a target="_blank" href="https://github.com/balderdashy/sails"><li>GitHub</li></a>
-        <a target="_blank" href="https://groups.google.com/forum/#!forum/sailsjs"><li>Google Group</li></a>
-        <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
-
-      </ul>
+        <div class="modal-body">
+          <div class="col-sm-3">
+            <img src="images/1.jpg" alt="IMG" style="width: 100%;">
+          </div>
+            <div class="col-sm-6">
+              <p>Game A</p>
+            </div>
+            <div class="col-sm-3 text-right">
+              <p>$50</p>
+            </div>
+        </div>
+        <div class="modal-body">
+          <div class="col-sm-3">
+            <img src="images/1.jpg" alt="IMG" style="width: 100%;">
+          </div>
+            <div class="col-sm-6">
+              <p>Game A</p>
+            </div>
+            <div class="col-sm-3 text-right">
+              <p>$50</p>
+            </div>
+        </div>
+        <div class="col-sm-12">
+          <p class="text-right">Total: $150</p>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success">View Cart</button>
+          <button type="button" class="btn btn-success">Check Out</button>
+        </div>
+        
+      </div>
     </div>
   </div>
-</div>
+
+    <div class="container-fluid">
+    <header>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner" role="listbox">
+            <!-- Slide One - Set the background image for this slide in the line below -->
+            <div class="carousel-item active">
+              <img src="images/1.jpg" style="width: 100%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>First Slide</h3>
+                <p>This is a description for the first slide.</p>
+              </div>
+            </div>
+            <!-- Slide Two - Set the background image for this slide in the line below -->
+            <div class="carousel-item">
+              <img src="images/2.jpg" style="width: 100%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Second Slide</h3>
+                <p>This is a description for the second slide.</p>
+              </div>
+            </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item">
+              <img src="images/3.jpg" style="width: 100%;">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>Third Slide</h3>
+                <p>This is a description for the third slide.</p>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </header>
+  </div>
+
+  <div class="container-fluid">
+    <div class="col-lg-12">
+
+      <div class="col-md-12">
+        <h3>Popular Game</h3>
+        <div class="row">
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="col-md-12">
+        <h3>New Game</h3>
+        <div class="row">
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <div class="col-md-12">
+        <h3>On Sale Game</h3>
+        <div class="row">
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+          <div class=" col-sm-3">
+            <img src="images/4.jpg" style="width: 100%; height:150px;">
+            <div class="row">
+              <div class="col-sm-9">
+                <p>Rise of Tomb Raider</p>
+              </div>
+              <div class="col-sm-3">
+                <p class="text-right">$50</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-9">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" class="btn btn-success">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Your Website 2018</p>
+      </div>
+    </footer>
+
+    <script src="styles/vendor/jquery/jquery.min.js"></script>
+    <script src="styles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
