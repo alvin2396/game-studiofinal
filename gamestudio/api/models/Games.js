@@ -38,7 +38,7 @@ module.exports = {
     },
 
     harga : {
-        type : 'number'
+        type : 'string'
     },
 
     min_requirement : {
