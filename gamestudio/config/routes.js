@@ -35,23 +35,12 @@ module.exports.routes = {
   '/': {
     view: 'homepage'
   },
-  'GET /register': {
-    controller: 'user',
-    action: "cekID",
-  },
-  '/login': {
-    view: 'login'
-  },
-  'GET /admin/rating': {
-    controller: 'rating',
-    action: "findall",
-//    view: 'user/list'
-  },
-  'GET /admin/genre_list': {
-    controller: 'genre_list',
-    action: "findall",
-//    view: 'user/list'
-  },
+ '/login':{
+    view:'login'
+ },
+ '/register':{
+    view:'register'
+ }
  
   
 

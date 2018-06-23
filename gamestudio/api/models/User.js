@@ -21,6 +21,15 @@ module.exports = {
           type: 'string',
           required:true
       },
+      
+      toJSON: function(){
+      var obj = this.toObject();
+      delete obj.password;
+      delete obj.csrf;
+      return obj;
+
+    
+    },
 
   },
   connection:'database'

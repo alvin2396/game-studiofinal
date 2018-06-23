@@ -3,21 +3,21 @@
 
 <head>
 
-  <meta charset="utf-9">
+	<meta charset="utf-9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Login</title>
+	<title>Register</title>
 
- <link href="styles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/bootstrap/custom css home.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="bootstrap/custom css register.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container-fluid">
         <a class="navbar-brand js-scroll-trigger" href="Home.html">Logo</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -120,30 +120,27 @@
     </div>
 
     <div class="loginmodal-container">
-      <div class="col-md-12">
-        <img src="img/login.jpg" style="width: 30%;" class="rounded mx-auto d-block">
-      </div>
-      <h1>Login to Your Account</h1><br>
-      <form action="user/login" method="POST" class="form-login">
-        <input type="text" name="email" placeholder="email">
-        <input type="password" name="password" placeholder="Password">
-        <input type="submit" class="login loginmodal-submit">
-      </form>
-          
-      <div class="login-help">
-        <a href="/register">Register</a> - <a href="Forgot Password">Forgot Password</a>
-      </div>
+    	<div class="col-md-12">
+    		<img src="img/login.jpg" style="width: 30%;" class="rounded mx-auto d-block">
+    	</div>
+    	<h1>Register</h1><br>
+    	<form action="user/create" method="POST" class="form-register">
+    		<input type="text" name="username" placeholder="Username">
+        <input type="text" name="email" placeholder="Email">
+    		<input type="password" name="password" placeholder="Password">
+    		<input type="submit"class="login loginmodal-submit">
+    	</form>
     </div>
 
-      <!-- Footer -->
+	    <!-- Footer -->
     <footer>
       <div class="container text-center">
         <p>Copyright &copy; Your Website 2018</p>
       </div>
     </footer>
 
-   <script src="styles/vendor/jquery/jquery.min.js"></script>
-    <script src="styles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
