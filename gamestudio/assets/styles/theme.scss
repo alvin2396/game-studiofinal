@@ -19,7 +19,7 @@ $enable-print-styles:       true;
 
 $theme-colors: (
   primary: #12bbad,
-  secondary: #000000,
+  secondary: #4f70ce,
   light: #f3f3f3,
   dark: #151515,
   info: #ccc,
@@ -28,13 +28,8 @@ $theme-colors: (
   danger: #dc3545
 );
 
-$body-bg: #000000;
-
-$body-color: #ffffff;
-
-
-
-
+$body-bg: white;
+$body-color: #333;
 
 
 $body-color-inverse: invert($body-color) !default;
