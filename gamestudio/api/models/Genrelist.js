@@ -1,5 +1,5 @@
 /**
- * Genre.js
+ * Genrelist.js
  *
  * @description :: A model definition.  Represents a database table/collection/etc.
  * @docs        :: https://sailsjs.com/docs/concepts/models-and-orm/models
@@ -9,15 +9,15 @@ module.exports = {
 
   attributes: {
 
-    genreotm : {
-        collection:'genrelist',
-        via : 'genre_id'
+    game_id :{
+        model:'games',
+        required:true
     },
-
-    genre_name : {
-        type: 'string'
-    },
-
+    genre_id:{
+        model:'genre',
+        required:true
+    }
+   
   },
   connection :'database'
 
