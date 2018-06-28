@@ -32,14 +32,28 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/': {
+  'GET /': {
     view: 'homepage'
   },
- '/login':{
-    view:'login'
+
+ 'GET /login':{
+    controller: 'session',
+    action: "login",
  },
- '/register':{
-    view:'register'
+
+  'GET /user/profile/:id': {
+  controller: 'user',
+  action: "userProfile",
+},
+
+ 'GET /games/detailGame/:id':{
+    controller:"games",
+    action:"detailGame"
+ } ,
+
+ 'GET /register':{
+    controller: 'session',
+    action: "register",
  }
  
   

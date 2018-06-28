@@ -26,7 +26,17 @@ module.exports.policies = {
   *                                                                          *
   ***************************************************************************/
 
-  // '*': true,
+'*' :"flash",
+  
+
+  user :{
+    'login' :'flash',
+    create:'flash',
+    updateProfile:'flash',
+    userProfile:['flash','authenticated'],
+    
+    '*' : 'authenticated'
+  }
 
   /***************************************************************************
   *                                                                          *
