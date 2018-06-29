@@ -8,7 +8,7 @@
 module.exports = {
   detailGame: function (req, res, next) {
        
-        Games.findOne(req.param('id')).populateAll().exec(function (err, games) {
+        Games.findOne(req.param('id')).populateAll().exec(function (err, game) {
             if (err) {
                 return res.serverError(err);
             } else {
