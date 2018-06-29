@@ -25,7 +25,15 @@ module.exports = {
         type: 'string'
     },
 
-    screenshot_url : {
+    screenshot1_url : {
+        type: 'string'
+    },
+
+    screenshot2_url : {
+        type: 'string'
+    },
+
+    screenshot3_url : {
         type: 'string'
     },
 
@@ -50,7 +58,7 @@ module.exports = {
     },
 
     discount : {
-        type : 'number'
+        type : 'string'
     },
 
     description : {
@@ -66,7 +74,7 @@ module.exports = {
     },
 
     rating : {
-        type : 'number'
+        type : 'string'
     },
 
     Story_rating : {

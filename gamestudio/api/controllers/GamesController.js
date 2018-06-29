@@ -74,16 +74,21 @@ module.exports = {
     },
 
     gamePopular: function(req,res){
-        Games.find()
+    	
+        var populargames = Games.find()
         .sort({harga: 'DESC'})
-        .limit(3)
-        .exec(function(err,data){
+        .limit(20)
+        .exec(function(err,games){
             if(err)
                 return res.serverError(err);
             else{
-                
+                return res.json(games);
             }
         })
+    },
+
+    add:function(req,res){
+    	res.view('admin/addGame')
     }
 };
 
