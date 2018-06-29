@@ -47,9 +47,14 @@ module.exports.routes = {
 },
 
  'GET /games/detailGame/:id':{
-    controller:"games",
+    controller:'games',
     action:"detailGame"
  } ,
+
+'GET /popular':{
+  controller: 'games',
+  action: "gamePopular",
+}, 
 
  'GET /register':{
     controller: 'session',

@@ -67,6 +67,23 @@ module.exports = {
 
             }
         })
+    },
+
+    populargame: function(req,res){
+        res.view('popular');
+    },
+
+    gamePopular: function(req,res){
+        Games.find()
+        .sort({harga: 'DESC'})
+        .limit(3)
+        .exec(function(err,data){
+            if(err)
+                return res.serverError(err);
+            else{
+                
+            }
+        })
     }
 };
 
