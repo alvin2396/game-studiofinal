@@ -75,14 +75,40 @@ module.exports = {
 
     gamePopular: function(req,res){
     	
-        var populargames = Games.find()
-        .sort({harga: 'DESC'})
-        .limit(20)
+        Games.find()
+        .sort({rating: 'DESC'})
+        .limit(4)
         .exec(function(err,games){
             if(err)
                 return res.serverError(err);
             else{
-                return res.json(games);
+                res.view('homepage',{
+                    status : 'OK',
+                    title : 'Game Studio',
+                    games : games
+                })
+
+
+            }
+        })
+    },
+
+    newGame: function(req,res){
+        
+        Games.find()
+        .sort({rating: 'ASC'})
+        .limit(4)
+        .exec(function(err,newgames){
+            if(err)
+                return res.serverError(err);
+            else{
+                res.view('homepage',{
+                    status : 'OK',
+                    title : 'Game Studio',
+                    newgames : newgames
+                })
+
+
             }
         })
     },

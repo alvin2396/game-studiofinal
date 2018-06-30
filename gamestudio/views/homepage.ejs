@@ -1,157 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="styles/custom.css" type="text/css">
+  <link rel="stylesheet" href="styles/theme.css" type="text/css"> </head>
 
-  <meta charset="utf-9">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Home</title>
-
-  <link href="styles/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="styles/bootstrap/custom css home.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-</head>
-
-<body id="page-top">
-
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-      <div class="container-fluid">
-        <a class="navbar-brand js-scroll-trigger" href="Home.html">Logo</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fa fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="Home.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="Genre.html">Genre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="New Game.html">New Game</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="On Sale Now.html">On Sale Now</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="My Specification.html">My Specification</a>
-            </li>
-          </ul>
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a data-toggle="modal" href="#myModal">
-              <i class="fa fa-shopping-cart" style="font-size:26px"></i>
-            </a>
-            </li>
-            <li class="nav-item">
-                <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-              </form>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/login">Login</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  <div class="modal fade" id="myModal">
-    <div class="modal-dialog">
-      <div class="modal-content">
-      
-        <!-- Modal Header -->
-        <div class="modal-header">
-          <h5 class="modal-title"><b>YOUR SHOPPING CART</b></h5>
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-        </div>
-        
-        <!-- Modal body -->
-        <div class="modal-body">
-          <div class="col-sm-3">
-            <img src="images/1.jpg" alt="IMG" style="width: 100%;">
+<body class="bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="Home.html">LOGO</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="Home.html">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Genre</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Adventure</a>
+              <a class="dropdown-item" href="#">Strategy</a>
+              <a class="dropdown-item" href="#">Simulation</a>
+              <a class="dropdown-item" href="#">RPG</a>
+              <a class="dropdown-item" href="#">Violent</a>
+              <a class="dropdown-item" href="#">Singleplayer</a>
+              <a class="dropdown-item" href="#">Massively Multiplayer</a>
+              <a class="dropdown-item" href="#">Sports</a>
+              <a class="dropdown-item" href="#">Racing</a>
+              <a class="dropdown-item" href="#">Multiplayer</a>
+              <a class="dropdown-item" href="#">Horror</a>
+              <a class="dropdown-item" href="#">Open World</a>
+              <a class="dropdown-item" href="#">Fantasy</a>
+              <a class="dropdown-item" href="#">Sci-fi</a>
+              <a class="dropdown-item" href="#">Indie</a>
+              <a class="dropdown-item" href="#">FPS</a>
+              <a class="dropdown-item" href="#">Mystery</a>
+              <a class="dropdown-item" href="#">Action</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="New Game.html">New Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="On Sale Game.html">On Sale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My Specification</a>
+          </li>
+        </ul>
+        <form class="form-inline m-0">
+          <input class="form-control mr-2" type="text" placeholder="Search"> </form>
+        <div class="dropdown">
+          <a class="btn btn-default navbar-btn text-white" href="http://example.com" aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="cart">
+            <i class="fa fa-shopping-cart fa-fw"></i>Cart</a>
+          <div class="container">
+            <ul class="dropdown-menu dropdown-cart" aria-labelledby="cart">
+              <li>
+                <div class="col-md-12">
+                  <span class="item">
+                    <span class="item-left">
+                      <img src="img/1.jpg" alt="">
+                      <span class="item-info">
+                        <span>Item name</span>
+                        <span>23$</span>
+                      </span>
+                    </span>
+                    <span class="item-right">
+                      <i class="fa fa-trash"></i>
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-12">
+                  <span class="item">
+                    <span class="item-left">
+                      <img src="img/1.jpg" alt="">
+                      <span class="item-info">
+                        <span>Item name</span>
+                        <span>23$</span>
+                      </span>
+                    </span>
+                    <span class="item-right">
+                      <i class="fa fa-trash"></i>
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-12">
+                  <span class="item">
+                    <span class="item-left">
+                      <img src="img/1.jpg" alt="">
+                      <span class="item-info">
+                        <span>Item name</span>
+                        <span>23$</span>
+                      </span>
+                    </span>
+                    <span class="item-right">
+                      <i class="fa fa-trash"></i>
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li>
+                <div class="col-md-12">
+                  <span class="item">
+                    <span class="item-left">
+                      <img src="img/1.jpg" alt="">
+                      <span class="item-info">
+                        <span>Item name</span>
+                        <span>23$</span>
+                      </span>
+                    </span>
+                    <span class="item-right">
+                      <i class="fa fa-trash"></i>
+                    </span>
+                  </span>
+                </div>
+              </li>
+              <li class="divider"></li>
+              <li>
+                <div class="col-md-12 text-right">
+                  <a class="btn btn-success btn-sm" href="#">Check Out</a>
+                </div>
+              </li>
+            </ul>
           </div>
-            <div class="col-sm-6">
-              <p>Game A</p>
-            </div>
-            <div class="col-sm-3 text-right">
-              <p>$50</p>
-            </div>
         </div>
-        <div class="modal-body">
-          <div class="col-sm-3">
-            <img src="images/1.jpg" alt="IMG" style="width: 100%;">
-          </div>
-            <div class="col-sm-6">
-              <p>Game A</p>
-            </div>
-            <div class="col-sm-3 text-right">
-              <p>$50</p>
-            </div>
-        </div>
-        <div class="modal-body">
-          <div class="col-sm-3">
-            <img src="images/1.jpg" alt="IMG" style="width: 100%;">
-          </div>
-            <div class="col-sm-6">
-              <p>Game A</p>
-            </div>
-            <div class="col-sm-3 text-right">
-              <p>$50</p>
-            </div>
-        </div>
-        <div class="col-sm-12">
-          <p class="text-right">Total: $150</p>
-        </div>
-        
-        <!-- Modal footer -->
-        <div class="modal-footer">
-          <button type="button" class="btn btn-success">View Cart</button>
-          <button type="button" class="btn btn-success">Check Out</button>
-        </div>
-        
+        <a class="btn btn-default navbar-btn text-white" href="Login.html">
+          <i class="fa fa-user fa-fw"></i>Sign in</a>
       </div>
     </div>
-  </div>
-
-    <div class="container-fluid">
-    <header>
+  </nav>
+  <hr style="border: 1px solid white;" class="m-0 p-0 border border-info">
+  <div class="text-center text-white bg-dark py-1" style="background-image: url('img/web background.jpg');">
+    <div class="container p-0 my-1">
+      <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
           </ol>
           <div class="carousel-inner" role="listbox">
             <!-- Slide One - Set the background image for this slide in the line below -->
             <div class="carousel-item active">
-              <img src="images/1.jpg" style="width: 100%;">
-              <div class="carousel-caption d-none d-md-block">
-                <h3>First Slide</h3>
-                <p>This is a description for the first slide.</p>
-              </div>
-            </div>
+              <img src="image/Carousel 1.jpg" style="width: 100%;"> </div>
             <!-- Slide Two - Set the background image for this slide in the line below -->
             <div class="carousel-item">
-              <img src="images/2.jpg" style="width: 100%;">
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Second Slide</h3>
-                <p>This is a description for the second slide.</p>
-              </div>
-            </div>
+              <img src="image/Carousel 2.jpg" style="width: 100%;"> </div>
             <!-- Slide Three - Set the background image for this slide in the line below -->
             <div class="carousel-item">
-              <img src="images/3.jpg" style="width: 100%;">
-              <div class="carousel-caption d-none d-md-block">
-                <h3>Third Slide</h3>
-                <p>This is a description for the third slide.</p>
-              </div>
-            </div>
+              <img src="image/Carousel 3.jpg" style="width: 100%;"> </div>
+            <!-- Slide Three - Set the background image for this slide in the line below -->
+            <div class="carousel-item">
+              <img src="image/Carousel 4.jpg" style="width: 100%;"> </div>
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -163,320 +174,210 @@
           </a>
         </div>
       </header>
+    </div>
+    <div class="container bg-light py-2 my-2" style="border-radius: 10px;">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="text-center">
+            <b>
+              <a href="Popular.html" class="text-dark"> POPULAR GAME</a>
+            </b>
+          </h4>
+        </div>
+      </div>
+      
+      <div class="row">
+        <%  _.each(games,function(popular){ %>
+        <div class="col-md-3">
+          <img class="img-fluid d-block" src="<%= popular.photo_url %>">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left"><%= popular.game_name %></h6>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-right m-0 py-1"><%= popular.harga %>
+                <br> </h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <div class="col-md-6 text-right">
+              <a class="btn btn-success btn-sm" href="#">Add</a>
+            </div>
+          </div>
+        </div>
+       <%})%>
+    </div>
   </div>
 
-  <div class="container-fluid">
-    <div class="col-lg-12">
-
-      <div class="col-md-12">
-        <h3>Popular Game</h3>
-        <div class="row">
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+    <div class="container bg-light py-2" style="border-radius: 10px;">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="text-center">
+            <a href="New Game.html" class="text-dark">
+              <b>NEW GAME</b>
+            </a>
+          </h4>
+        </div>
+      </div>
+      <div class="row">
+       
+        <div class="col-md-3">
+          <img class="img-fluid d-block" src="">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left"></h6>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6">
+              <h6 class="text-right m-0 py-1"></h6>
             </div>
           </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
-            </div>
-          </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
-            </div>
-          </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6 text-right">
+              <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
         </div>
+        
       </div>
+    </div>
 
-      <br>
 
-      <div class="col-md-12">
-        <h3>New Game</h3>
-        <div class="row">
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+    <div class="container bg-light py-2 my-2" style="border-radius: 10px;">
+      <div class="row">
+        <div class="col-md-12">
+          <h4 class="text-center text-dark">
+            <b>
+              <a href="On Sale Game.html" class="text-dark">ON SALE GAME</a>
+            </b>
+          </h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <img class="img-fluid d-block" src="img/4.jpg">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left">Game 1</h6>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6">
+              <h6 class="text-right m-0 py-1">Harga
+                <br> </h6>
             </div>
           </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
-            </div>
-          </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
-            </div>
-          </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6 text-right">
+              <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
         </div>
-      </div>
-
-      <br>
-
-      <div class="col-md-12">
-        <h3>On Sale Game</h3>
-        <div class="row">
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+        <div class="col-md-3">
+          <img class="img-fluid d-block" src="img/4.jpg">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left">Game 1</h6>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6">
+              <h6 class="text-right m-0 py-1">Harga
+                <br> </h6>
             </div>
           </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6 text-right">
+              <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+        </div>
+        <div class="col-md-3">
+          <img class="img-fluid d-block" src="img/4.jpg">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left">Game 1</h6>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6">
+              <h6 class="text-right m-0 py-1">Harga
+                <br> </h6>
             </div>
           </div>
-          <div class=" col-sm-3">
-            <img src="images/4.jpg" style="width: 100%; height:150px;">
-            <div class="row">
-              <div class="col-sm-9">
-                <p>Rise of Tomb Raider</p>
-              </div>
-              <div class="col-sm-3">
-                <p class="text-right">$50</p>
-              </div>
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
             </div>
-            <div class="row">
-              <div class="col-sm-9">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-              </div>
-              <div class="col-sm-3">
-                <button type="button" class="btn btn-success">Add</button>
-              </div>
+            <div class="col-md-6 text-right">
+              <a class="btn btn-success btn-sm" href="#">Add</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <img class="img-fluid d-block" src="img/4.jpg">
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left">Game 1</h6>
+            </div>
+            <div class="col-md-6">
+              <h6 class="text-right m-0 py-1">Harga
+                <br> </h6>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <div class="col-md-6 text-right">
+              <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
-      <!-- Footer -->
-    <footer>
-      <div class="container text-center">
-        <p>Copyright &copy; Your Website 2018</p>
+  <div class="py-5 text-white bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 mt-3 text-center">
+          <p>© Copyright 2017 Pingendo - All rights reserved.</p>
+        </div>
       </div>
-    </footer>
-
-    <script src="styles/vendor/jquery/jquery.min.js"></script>
-    <script src="styles/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>
