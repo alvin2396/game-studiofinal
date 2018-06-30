@@ -101,6 +101,8 @@ module.exports = {
         type : 'string'
     },
 
+
+
   },
   connection : 'database'
 

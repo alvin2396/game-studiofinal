@@ -70,21 +70,41 @@ module.exports = {
     },
 
     populargame: function(req,res){
-        res.view('popular');
+        Games.find().sort('rating DESC').limit(40).exec(function(err,games_popular){
+            if(err){
+                return res.serverError(err);
+            }
+            else{
+                res.view('user/popularGame',{
+                    status : 'OK',
+                    title : 'Popular Games',
+                    games_popular : games_popular
+                })
+            }
+        })
     },
 
     gamePopular: function(req,res){
     	
-        var populargames = Games.find()
-        .sort({harga: 'DESC'})
-        .limit(20)
-        .exec(function(err,games){
+        Games.find().sort('rating DESC').limit(4).exec(function(err,games){
             if(err)
                 return res.serverError(err);
             else{
-                return res.json(games);
+                Games.find().sort('harga ASC').limit(4).exec(function(err,newgame){
+                    if(err)
+                        return res.serverError(err);
+                    else{
+                        res.view('homepage',{
+                            status : 'OK',
+                            title : 'Game Studio',
+                            games : games,
+                            newgame : newgame
+                        })
+                    }
+                })
             }
         })
+        
     },
 
     add:function(req,res){

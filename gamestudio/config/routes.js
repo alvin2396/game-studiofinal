@@ -33,7 +33,8 @@ module.exports.routes = {
   ***************************************************************************/
 
   'GET /': {
-    view: 'homepage'
+    controller : 'games',
+    action : "gamePopular",
   },
 
  'GET /login':{
@@ -48,13 +49,16 @@ module.exports.routes = {
 
  'GET /games/detailGame/:id':{
     controller:'games',
-    action:"detailGame"
+    action:"detailGame",
  } ,
+'GET /games/add': {
+    view:'admin/addGame',
+},
 
-'GET /popular':{
-  controller: 'games',
-  action: "gamePopular",
-}, 
+'GET /games/popular' : {
+  controller : 'games',
+  action : "populargame",
+},
 
  'GET /register':{
     controller: 'session',
