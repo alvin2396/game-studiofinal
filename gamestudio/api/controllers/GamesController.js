@@ -7,67 +7,94 @@
 
 module.exports = {
   detailGame: function (req, res, next) {
-       
-        Games.findOne(req.param('id')).populateAll().exec(function (err, game) {
+
+        Games.findOne(req.param('id')).populateAll().exec(function (err, games) {
             if (err) {
                 return res.serverError(err);
             } else {
-                
+
                 games.genreStrings = []
-                games.userStrings =[]
+                games.userStrings = []
                 async.each(games.genre_lists, function (genre, callback) {
-                    Genre.findOne({ id: genre.id_genre }).exec(function (err, genres) {
+                    Genre.findOne({ id: genre.genre_id }).exec(function (err, genres) {
                         if (err) {
                             callback(err)
                         } else {
-                            
+
                             games.genreStrings.push({
-                                id:genres.id,
-                                nama_genre:genres.nama_genre})
+                                id: genres.id,
+                                nama_genre: genres.genre_name
+                            })
                             callback()
                         }
                     })
                 }, function (err) { // function ini akan jalan bila semua genre_lists telah diproses
-                
+
                     if (err)
                         return res.serverError(err);
-                    else { 
+                    else {
                         async.each(games.ratings, function (user, callback) {
-                            
+
                             User.findOne({ id: user.id_user }).exec(function (err, users) {
                                 if (err) {
                                     callback(err)
                                 } else {
-                                        games.userStrings.push({
-                                        id:users.id,
-                                        nama:users.nama,
-                                        photo_url:users.photo_url,users,
-                                        review:users.review,
-                                        score:user.score,
-                                        
+                                    games.userStrings.push({
+                                        id: users.id,
+                                        nama: users.nama,
+                                        photo_url: users.photo_url, users,
+                                        review: user.review,
+                                        score: user.score,
+
                                     })
                                     callback()
                                 }
                             })
                         }, function (err) { // function ini akan jalan bila semua genre_lists telah diproses
-                           
+
                             if (err)
                                 return res.serverError(err);
-                            else {         
-                                res.view("user/detail-games/", {
-                                    status: 'OK',
-                                    title: 'Detail games',
-                                    games: games
+                            else {
+                                async.each(games.ratings, function (user, callback) {
+
+                                    User.findOne({ id: user.id_user }).exec(function (err, users) {
+                                        if (err) {
+                                            callback(err)
+                                        } else {
+                                            games.userStrings.push({
+                                                id: users.id,
+                                                nama: users.nama,
+                                                photo_url: users.photo_url, users,
+                                                review: user.review,
+                                                score: user.score,
+
+                                            })
+                                            callback()
+                                        }
+                                    })
+                                }, function (err) { // function ini akan jalan bila semua genre_lists telah diproses
+
+                                    if (err)
+                                        return res.serverError(err);
+                                    else {
+                                        res.view("user/gameDetail/", {
+
+                                            status: 'OK',
+                                            title: 'Detail Game',
+                                            games: games
+                                        })
+                                    }
                                 })
                             }
-                        })        
-                        
+                        })
+
                     }
                 })
 
             }
         })
     },
+
 
     populargame: function(req,res){
         Games.find().sort('rating DESC').limit(40).exec(function(err,games_popular){
@@ -109,6 +136,10 @@ module.exports = {
 
     add:function(req,res){
     	res.view('admin/addGame')
+    },
+
+    newGame : function(req,res,next){
+
     }
 };
 

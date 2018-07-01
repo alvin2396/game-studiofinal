@@ -9,7 +9,7 @@ module.exports = {
 
   attributes: {
 
-    genreotm : {
+    genres : {
         collection:'genrelist',
         via : 'genre_id'
     },

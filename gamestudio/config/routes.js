@@ -60,6 +60,11 @@ module.exports.routes = {
   action : "populargame",
 },
 
+
+'GET /genrelist/add' : {
+  view:'admin/addGenreList'
+},
+
  'GET /register':{
     controller: 'session',
     action: "register",
