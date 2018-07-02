@@ -4,9 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="/styles/theme.css" type="text/css"> </head>
+  <link rel="stylesheet" href="/styles/theme.css" type="text/css">
+  
+
+</head>
 
 <body>
   <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
@@ -55,11 +58,11 @@
     <div class="container">
       <div class="row my-2">
         <%  _.each(games_popular,function(popular){ %>
-        <div class="col-md-3">
+        <div class="col-md-3 my-2">
           <a href="localhost:1337/games/detailGame/<%= popular.id %>"><img class="img-fluid d-block" src="<%= popular.photo_url %>"></a>
           <div class="row">
             <div class="col-md-6">
-              <h6 class="py-1 m-0"><%= popular.game_name %></h6>
+              <h6 class="py-1 m-0" id="text" style="display: -webkit-box;height: 45px;-webkit-line-clamp: 2;-webkit-box-orient: vertical;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= popular.game_name %></h6>
             </div>
             <div class="col-md-6">
               <h6 class="text-right m-0 py-1">Rp.<%= popular.harga.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") %></h6>
@@ -92,7 +95,7 @@
       </div>
     </div>
   </div>
-  <script>
+  <script type="text/javascript">
     var length = 22;
   
     var text = document.getElementById('text')
@@ -103,6 +106,8 @@
   
     text.innerHTML = trimmedString
   </script>
+
+
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
