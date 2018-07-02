@@ -25,6 +25,21 @@ module.exports = {
       }
     })
   },
+
+  userLogin:function(req,res,next){
+    User.findOne(req.param('id'),function(err,userLog){
+      if(err){
+        console.log(err);
+      }
+      else{
+        return res.view('user/home_login',{
+          status: 'OK',
+          title : 'Home',
+          userLog:userLog
+        })
+      }
+    })
+  },
   editProfile:function(req,res,next){
     User.findOne(req.param('id'),function(err,editProfile){
       if(err){
@@ -196,7 +211,10 @@ module.exports = {
               err: daftarSuccess
             // If error redirect back to sign-up page
             }
-            res.redirect('/login');
+            res.redirect('/login',{
+              status : 'OK',
+              title : 'Login'
+            });
             return;
           }
             

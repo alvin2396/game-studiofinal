@@ -73,7 +73,7 @@ module.exports = {
 				// Log user in
 				req.session.authenticated = true;
 				req.session.User = user;
-				res.redirect('/user/profile/' + user.id);
+				res.redirect('/user/home_login/' + user.id);
 
 			});
 		});

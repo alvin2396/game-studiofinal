@@ -47,6 +47,11 @@ module.exports.routes = {
   action: "userProfile",
 },
 
+'GET/user/home_login/:id':{
+  controller : 'user',
+  action : "userLogin",
+},
+
  'GET /games/detailGame/:id':{
     controller:'games',
     action:"detailGame",

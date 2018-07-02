@@ -78,7 +78,6 @@ module.exports = {
                                         return res.serverError(err);
                                     else {
                                         res.view("user/gameDetail/", {
-
                                             status: 'OK',
                                             title: 'Detail Game',
                                             games: games
@@ -97,7 +96,7 @@ module.exports = {
 
 
     populargame: function(req,res){
-        Games.find().sort('rating DESC').limit(40).exec(function(err,games_popular){
+        Games.find().sort('rating DESC').limit(30).populateAll().exec(function(err,games_popular){
             if(err){
                 return res.serverError(err);
             }
@@ -113,26 +112,53 @@ module.exports = {
 
     gamePopular: function(req,res){
     	
-        Games.find().sort('rating DESC').limit(4).exec(function(err,games){
+        Games.find().sort('rating DESC').limit(4).populateAll().exec(function(err,games){
             if(err)
                 return res.serverError(err);
             else{
-                Games.find().sort('harga ASC').limit(4).exec(function(err,newgame){
-                    if(err)
+                games.genreStrings = []
+                games.userStrings = []
+                async.each(games.genre_lists, function (genre, callback){
+                    Genre.findOne({ id: genre.genre_id }).exec(function (err, genres){
+                        if(err){
+                            callback(err)
+                        }
+                        else{
+                            games.genreStrings.push({
+                                id: genres.id,
+                                nama_genre: genres.genre_name
+                            })
+                            callback()
+                        }
+                    })
+                },function(err){
+                    if(err){
                         return res.serverError(err);
+                    }
                     else{
-                        res.view('homepage',{
-                            status : 'OK',
-                            title : 'Game Studio',
-                            games : games,
-                            newgame : newgame
+                        Games.find().sort('rating ASC').limit(4).exec(function(err,newgame){
+                            if(err){
+                                return res.serverError(err);
+                            }
+                            else{
+                                res.view('homepage',{
+                                    status : 'OK',
+                                    title : 'Game Studio',
+                                    games : games,
+                                    newgame : newgame
+                                })
+                            }
                         })
                     }
-                })
+                }
+
+                )
             }
         })
         
     },
+
+    
 
     add:function(req,res){
     	res.view('admin/addGame')
