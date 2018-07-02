@@ -4,21 +4,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="styles/custom.css" type="text/css">
-  <link rel="stylesheet" href="styles/theme.css" type="text/css"> </head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles/custom.css" type="text/css">
+  <link rel="stylesheet" href="/styles/theme.css" type="text/css"> </head>
 
 <body class="bg-dark">
   <nav class="navbar navbar-expand-md navbar-dark">
     <div class="container">
-      <a class="navbar-brand" href="Home.html">LOGO</a>
+      <a class="navbar-brand" href="localhost:1337/"><p>LOGO</p></a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="Home.html">Home</a>
+            <a class="nav-link" href="localhost:1337/">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Genre</a>
@@ -140,7 +142,7 @@
     </div>
   </nav>
   <hr style="border: 1px solid white;" class="m-0 p-0 border border-info">
-  <div class="text-center text-white bg-dark py-1" style="background-image: url('img/web background.jpg');">
+  <div class="text-center text-white bg-dark py-1" style="background-image: url(&quot;image/background.jpg&quot;);">
     <div class="container p-0 my-1">
       <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -180,43 +182,53 @@
         <div class="col-md-12">
           <h4 class="text-center">
             <b>
-              <a href="Popular.html" class="text-dark"> POPULAR GAME</a>
+              <a href="localhost:1337/games/popular" class="text-dark">POPULAR GAME</a>
             </b>
           </h4>
         </div>
       </div>
-      
       <div class="row">
         <%  _.each(games,function(popular){ %>
         <div class="col-md-3">
-          <img class="img-fluid d-block" src="<%= popular.photo_url %>">
+          <a href="localhost:1337/games/detailGame/<%= popular.id %>"><img class="img-fluid d-block" src="<%= popular.photo_url %>"></a>
           <div class="row">
-            <div class="col-md-6">
-              <h6 class="py-1 m-0 text-left"><%= popular.game_name %></h6>
-            </div>
-            <div class="col-md-6">
-              <h6 class="text-right m-0 py-1"><%= popular.harga %>
-                <br> </h6>
+            <div class="col-md-12" style="height:35px;">
+              <h6 class="py-1 text-left m-0 judul">
+                <b><%= popular.game_name %></b>
+              </h6>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 text-left">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left genre" style="font-size:14px;">Action, Sports asa asas asas</h6>
+            </div>
+            <div class="col-md-6 text-right">
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <span style="font-size:14px;"><%= popular.rating %></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              
+              <h6 class="py-1 m-0 text-left">
+                Rp.<%= popular.harga.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") %>
+              </h6>
+                
             </div>
             <div class="col-md-6 text-right">
               <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
         </div>
-       <%})%>
-    </div>
-  </div>
+        <%})%>
+      </div>
 
-    <div class="container bg-light py-2" style="border-radius: 10px;">
+    </div>
+    <div class="container bg-light py-2 my-2" style="border-radius: 10px;">
       <div class="row">
         <div class="col-md-12">
           <h4 class="text-center">
@@ -227,142 +239,89 @@
         </div>
       </div>
       <div class="row">
-       
+        <%  _.each(newgame,function(newgames){ %>
         <div class="col-md-3">
-          <img class="img-fluid d-block" src="">
+          <a href="localhost:1337/games/detailGame/<%= newgames.id %>"><img class="img-fluid d-block" src="<%= newgames.photo_url %>"></a>
           <div class="row">
-            <div class="col-md-6">
-              <h6 class="py-1 m-0 text-left"></h6>
-            </div>
-            <div class="col-md-6">
-              <h6 class="text-right m-0 py-1"></h6>
+            <div class="col-md-12" style="height:45px;">
+              <h6 class="py-1 text-left m-0 judul">
+                <b><%= newgames.game_name %></b>
+              </h6>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 text-left">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left genre" style="font-size:14px;">Action, Sports asa asas asas</h6>
+            </div>
+            <div class="col-md-6 text-right">
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <span style="font-size:14px;"><%= newgames.rating %></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left">
+                Rp.<%= newgames.harga.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") %>
+              </h6>
             </div>
             <div class="col-md-6 text-right">
               <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
         </div>
-        
+        <%})%>
       </div>
     </div>
-
-
     <div class="container bg-light py-2 my-2" style="border-radius: 10px;">
       <div class="row">
         <div class="col-md-12">
-          <h4 class="text-center text-dark">
-            <b>
-              <a href="On Sale Game.html" class="text-dark">ON SALE GAME</a>
-            </b>
+          <h4 class="text-center">
+            <a href="On Sale Game.html" class="text-dark">
+              <b> ON SALE GAME</b>
+            </a>
           </h4>
         </div>
       </div>
       <div class="row">
+        <%  _.each(newgame,function(newgames){ %>
         <div class="col-md-3">
-          <img class="img-fluid d-block" src="img/4.jpg">
+          <a href="localhost:1337/games/detailGame/"><img class="img-fluid d-block" src="<%= newgames.photo_url %>"></a>
           <div class="row">
-            <div class="col-md-6">
-              <h6 class="py-1 m-0 text-left">Game 1</h6>
-            </div>
-            <div class="col-md-6">
-              <h6 class="text-right m-0 py-1">Harga
-                <br> </h6>
+            <div class="col-md-12" style="height:45px;">
+              <h6 class="py-1 text-left m-0 judul">
+                <b><%= newgames.game_name %></b>
+              </h6>
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 text-left">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left genre" style="font-size:14px;">Action, Sports asa asas asas</h6>
+            </div>
+            <div class="col-md-6 text-right">
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <i class="fa fa-star" style="font-size:14px;"></i>
+              <span style="font-size:14px;"><%= newgames.rating %></span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <h6 class="py-1 m-0 text-left">
+                Rp.<%= newgames.harga.replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.") %>
+              </h6>
             </div>
             <div class="col-md-6 text-right">
               <a class="btn btn-success btn-sm" href="#">Add</a>
             </div>
           </div>
         </div>
-        <div class="col-md-3">
-          <img class="img-fluid d-block" src="img/4.jpg">
-          <div class="row">
-            <div class="col-md-6">
-              <h6 class="py-1 m-0 text-left">Game 1</h6>
-            </div>
-            <div class="col-md-6">
-              <h6 class="text-right m-0 py-1">Harga
-                <br> </h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 text-left">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-            <div class="col-md-6 text-right">
-              <a class="btn btn-success btn-sm" href="#">Add</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <img class="img-fluid d-block" src="img/4.jpg">
-          <div class="row">
-            <div class="col-md-6">
-              <h6 class="py-1 m-0 text-left">Game 1</h6>
-            </div>
-            <div class="col-md-6">
-              <h6 class="text-right m-0 py-1">Harga
-                <br> </h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 text-left">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-            <div class="col-md-6 text-right">
-              <a class="btn btn-success btn-sm" href="#">Add</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <img class="img-fluid d-block" src="img/4.jpg">
-          <div class="row">
-            <div class="col-md-6">
-              <h6 class="py-1 m-0 text-left">Game 1</h6>
-            </div>
-            <div class="col-md-6">
-              <h6 class="text-right m-0 py-1">Harga
-                <br> </h6>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-6 text-left">
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-              <i class="fa fa-star"></i>
-            </div>
-            <div class="col-md-6 text-right">
-              <a class="btn btn-success btn-sm" href="#">Add</a>
-            </div>
-          </div>
-        </div>
+        <%})%>
       </div>
     </div>
   </div>
@@ -375,9 +334,32 @@
       </div>
     </div>
   </div>
+  <script>
+    var length = 80;
+  
+    var text = document.getElementsByClassName("judul")
+    var string = text.innerHTML
+    var trimmedString = string.length > length ?
+      string.substring(0, length - 3) + "..." :
+      string
+  
+    text.innerHTML = trimmedString
+  </script>
+  <script>
+    var length = 20;
+  
+    var text = document.getElementsByClassName("genre")
+    var string = text.innerHTML
+    var trimmedString = string.length > length ?
+      string.substring(0, length - 3) + "..." :
+      string
+  
+    text.innerHTML = trimmedString
+  </script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" crossorigin="anonymous" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
