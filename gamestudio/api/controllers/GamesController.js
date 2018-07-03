@@ -163,7 +163,7 @@ module.exports = {
                 },function(err){
                     if(err){
                         return res.serverError(err);
-                    }d
+                    }
                     else{
                         Games.find().sort('release_date DESC').limit(4).exec(function(err,newgame){
                             if(err){
