@@ -73,6 +73,16 @@ module.exports.routes = {
  'GET /register':{
     controller: 'session',
     action: "register",
+ },
+
+ 'GET /games/cektanggal' : {
+  controller : 'games',
+  action : "cekTanggal",
+ },
+
+ 'GET/games/updatetanggal' : {
+  controller : 'games',
+  action : "updatetgal",
  }
  
   

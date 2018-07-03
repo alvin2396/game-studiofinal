@@ -94,6 +94,35 @@ module.exports = {
         })
     },
 
+    cekTanggal: function(req,res){
+        var tgl = "2018 - 07 - 02";
+        Games.find({game_id : 'G000'}).where({release_date : {'>=' : tgl }}).populateAll().exec(function(err,tanggal){
+            if(err){
+                return res.serverError(err);
+            }
+            else{
+                return res.json(tanggal);
+                }
+            
+        })
+    },
+
+    updatetgal:function(req,res){
+        var gameObj = {
+            release_date:req.param('release_date')
+        }
+
+        Games.update(req.param('id'),gameObj,function(err, updated){
+            if(err){
+                return res.serverError(err);
+            }
+            else{
+                return res.json(updated);
+            }
+        
+        })
+    },
+
 
     populargame: function(req,res){
         Games.find().sort('rating DESC').limit(30).populateAll().exec(function(err,games_popular){
@@ -134,9 +163,9 @@ module.exports = {
                 },function(err){
                     if(err){
                         return res.serverError(err);
-                    }
+                    }d
                     else{
-                        Games.find().sort('rating ASC').limit(4).exec(function(err,newgame){
+                        Games.find().sort('release_date DESC').limit(4).exec(function(err,newgame){
                             if(err){
                                 return res.serverError(err);
                             }
@@ -166,6 +195,10 @@ module.exports = {
 
     newGame : function(req,res,next){
 
+    },
+
+    updatetanggal : function(req,res){
+        res.view('admin/updatetgl')
     }
 };
 
